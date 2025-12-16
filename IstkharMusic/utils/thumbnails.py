@@ -3,6 +3,7 @@ import re
 import aiohttp
 import aiofiles
 from PIL import (
+from IstkharMusic.utils.thumbnails import generate_thumbnail as gen_thumb
     Image,
     ImageDraw,
     ImageEnhance,
