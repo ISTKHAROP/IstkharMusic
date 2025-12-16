@@ -1,4 +1,5 @@
 import time
+import random
 
 from pyrogram import filters
 from pyrogram.enums import ChatType
@@ -6,6 +7,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython.__future__ import VideosSearch
 
 import config
+from config import START_IMG_URL
 from IstkharMusic import app
 from IstkharMusic.misc import _boot_
 from IstkharMusic.plugins.sudo.sudoers import sudoers_list
@@ -17,7 +19,6 @@ from IstkharMusic.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from IstkharMusic.utils import bot_sys_stats
 from IstkharMusic.utils.decorators.language import LanguageStart
 from IstkharMusic.utils.formatters import get_readable_time
 from IstkharMusic.utils.inline import help_pannel, private_panel, start_panel
@@ -34,9 +35,8 @@ async def start_pm(client, message: Message, _):
         if name[0:4] == "help":
             keyboard = help_pannel(_)
             return await message.reply_photo(
-                photo=config.START_IMG_URL,
+                photo=random.choice(START_IMG_URL),
                 caption=_["help_1"].format(config.SUPPORT_GROUP),
-                protect_content=True,
                 reply_markup=keyboard,
             )
         if name[0:3] == "sud":
@@ -86,10 +86,9 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        UP, CPU, RAM, DISK = await bot_sys_stats()
         await message.reply_photo(
-            photo=config.START_IMG_URL,
-            caption=_["start_2"].format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM),
+            photo=random.choice(START_IMG_URL),
+            caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
         if await is_on_off(2):
@@ -105,7 +104,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        photo=config.START_IMG_URL,
+        photo=random.choice(START_IMG_URL),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
@@ -140,7 +139,7 @@ async def welcome(client, message: Message):
 
                 out = start_panel(_)
                 await message.reply_photo(
-                    photo=config.START_IMG_URL,
+                    photo=random.choice(START_IMG_URL),
                     caption=_["start_3"].format(
                         message.from_user.first_name,
                         app.mention,
