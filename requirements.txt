@@ -25,3 +25,4 @@ uvloop; sys_platform != "win32"
 yt-dlp
 youtube-search
 youtube-search-python
+py_yt_search
