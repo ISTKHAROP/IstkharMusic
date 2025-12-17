@@ -10,10 +10,6 @@ load_dotenv()
 API_ID = int(getenv("API_ID", "29869035"))
 API_HASH = getenv("API_HASH", "e7543eeb90a3209df9ee6b26aa84f994")
 
-YTPROXY_URL = getenv("YTPROXY_URL", 'https://tgapi.xbitcode.com') ## xBit Music Endpoint.
-YT_API_KEY = getenv("YT_API_KEY" , None ) ## Your API key like: xbit_yOlvm7t6_D8bR-3EOHCe7XFR8IhouwTg Get from  https://t.me/tgmusic_apibot
-
-
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = getenv("BOT_TOKEN")
 
@@ -36,8 +32,10 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
  #-------------------------------------------------------------
 
+# Vars For API End Pont.
+YTPROXY_URL = getenv("YTPROXY_URL", 'https://tgapi.xbitcode.com') ## xBit Music Endpoint.
+YT_API_KEY = getenv("YT_API_KEY", 'xbit_yOlvm7t6_D8bR-3EOHCe7XFR8IhouwTg') ## Your API key like: xbit_10000000xx0233 Get from  https://t.me/tgmusic_apibot
 
-VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://tgapi.xbitcode.com')
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
