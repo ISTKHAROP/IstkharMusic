@@ -18,7 +18,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 1700))
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", -1002060224175))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", -1002136457746))
 LOGGER_ID = LOG_GROUP_ID
 # Chat id of a group for logging bot's activities
 
@@ -32,9 +32,9 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
  #-------------------------------------------------------------
 
-# Vars For API End Pont.
-YTPROXY_URL = getenv("YTPROXY_URL", 'https://tgapi.xbitcode.com') ## xBit Music Endpoint.
-YT_API_KEY = getenv("YT_API_KEY", 'xbit_yOlvm7t6_D8bR-3EOHCe7XFR8IhouwTg') ## Your API key like: xbit_10000000xx0233 Get from  https://t.me/tgmusic_apibot
+API_URL = getenv("API_URL", 'https://pytdbotapi.thequickearn.xyz') #youtube song url
+VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.video.thequickearn.xyz')
+API_KEY = getenv("API_KEY", "NxGBNexGenBotsc75140") 
 
 
 UPSTREAM_REPO = getenv(
